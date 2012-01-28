@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2011 Senseless Solutions 
+ *
+ * Licensed under the GNU General Public License, Version 3.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at 
+ *
+ *      http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ * 
+ * Weight Chart is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * Modified Source code: http://code.google.com/p/weight-chart/
+ * Original Source code: http://fredrik.jemla.eu/weightchart
+ */
+
+-->
+
+<resources>
+    <string name="about_weight_chart">Om Weight Chart</string>
+    <string name="add">Lägg till</string>
+    <string name="all_entries_deleted">Alla mätvärden har nu tagits bort</string>
+    <string name="average">Genomsnitt av de senaste sju dagarna</string>
+    <string name="bmi_with_height">BMI (längd: %s)</string>
+    <string name="cancel">Avbryt</string>
+    <string name="close">Stäng</string>
+    <string name="count_entries">Räkna mätvärden</string>
+    <string name="date_legend">Veckadag och datum i månad</string>
+    <string name="delete">Ta bort</string>
+    <string name="delete_all_entries">Ta bort alla mätvärden</string>
+    <string name="drag_chart_to_scroll">Dra i diagram för att rulla</string>
+    <string name="edit">Redigera</string>
+    <string name="end_date_input">Avslutande datum:</string>
+    <string name="entries">Mätvärden</string>
+    <plurals name="entry_count">
+        <item quantity="one">1 mätvärde</item>
+	<item quantity="other">%d mätvärden</item>
+    </plurals>
+    <string name="entry_edited">Mätvärde redigerat</string>
+    <string name="export">Exportera</string>
+    <string name="export_csv">Exportera mätvärden som CSV</string>
+    <string name="export_ods">Exportera mätvärden som ODS</string>
+    <string name="export_png">Exportera diagram som PNG</string>
+    <string name="exported_to">Exporterat till %s</string>
+    <string name="failed_open_file">Misslyckades att öppna och läsa från fil %s</string>
+    <string name="failed_save_file">Misslyckades att skapa och skriva till fil %s</string>
+    <string name="file_input">Fil:</string>
+    <string name="file_not_found">Fil hittades inte: %s</string>
+    <string name="free_software_license">Licens (Fri programvara)</string>
+    <string name="height">Längd</string>
+    <string name="height_input">Längd:</string>
+    <string name="height_unit">Längdenhet</string>
+    <string name="height_unit_input">Längdenhet:</string>
+    <string name="import_">Importera</string>
+    <string name="import_csv">Importera mätvärden från CSV</string>
+    <string name="imported_from">Importerat från %s</string>
+    <string name="invalid_days">Ogiltigt antal dagar</string>
+    <string name="invalid_file_format">Ogiltigt filformat</string>
+    <string name="invalid_height">Ogiltig längd</string>
+    <string name="invalid_size">Ogiltig storlek</string>
+    <string name="invalid_weight">Ogiltig vikt</string>
+    <string name="legend">Förklaring</string>
+    <string name="license_summary">GNU General Public License version 3 eller senare</string>
+    <string name="media_not_available">SD-kort är inte tillgängligt</string>
+    <string name="menu_file">Arkiv</string>
+    <string name="no_entries">Inga mätvärden</string>
+    <string name="days_input">Antal dagar att visa:</string>
+    <string name="preferences">Inställningar</string>
+    <string name="question_delete_all">Ta bort alla mätvärden? Detta kan inte ångras.</string>
+    <string name="set_manually">Sätt manuellt</string>
+    <string name="share_file">Dela fil</string>
+    <string name="size_input">Storlek:</string>
+    <string name="skip">Hoppa över</string>
+    <string name="tap_to_open_menu">Peka för att öppna meny</string>
+    <string name="time">Tid</string>
+    <string name="transparency">Transparensitet</string>
+    <string name="view">Visa</string>
+    <string name="view_14_days">Visa 14 dagar</string>
+    <string name="view_21_days">Visa 21 dagar</string>
+    <string name="view_30_days">Visa 30 dagar</string>
+    <string name="view_60_days">Visa 60 dagar</string>
+    <string name="view_90_days">Visa 90 dagar</string>
+    <string name="view_7_days">Visa 7 dagar</string>
+    <string name="website">Webbplats</string>
+    <string-array name="weekdays">
+        <item>mo</item>
+        <item>ti</item>
+        <item>on</item>
+        <item>to</item>
+        <item>fr</item>
+        <item>lö</item>
+        <item>sö</item>
+    </string-array>
+    <string name="weight">Vikt</string>
+    <string name="weight_added">Vikt tillagd</string>
+    <string name="weight_kg_legend">Dagens första vikt (kg)</string>
+    <string name="weight_lb_legend">Dagens första vikt (lb)</string>
+    <string name="weight_st_legend">Dagens första vikt (st)</string>
+    <string name="weight_unit">Viktenhet</string>
+</resources>

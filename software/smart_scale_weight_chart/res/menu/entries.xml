@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is part of Weight Chart.
+Copyright 2010 Fredrik Portstrom
+
+Weight Chart is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at
+your option) any later version.
+
+Weight Chart is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Weight Chart. If not, see <http://www.gnu.org/licenses/>.
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+      android:id="@+id/add"
+      android:icon="@android:drawable/ic_menu_add"
+      android:title="@string/add"/>
+    <item
+      android:icon="@drawable/ic_menu_archive"
+      android:title="@string/menu_file">
+        <menu>
+            <item
+              android:id="@+id/import_csv"
+              android:title="@string/import_csv"/>
+            <item
+              android:id="@+id/export_csv"
+              android:title="@string/export_csv"/>
+            <item
+              android:id="@+id/export_ods"
+              android:title="@string/export_ods"/>
+            <item
+              android:id="@+id/export_png"
+              android:title="@string/export_png"/>
+            <item
+              android:id="@+id/count_entries"
+              android:title="@string/count_entries"/>
+            <item
+              android:id="@+id/delete_all_entries"
+              android:title="@string/delete_all_entries"/>
+        </menu>
+    </item>
+    <item
+      android:id="@+id/preferences"
+      android:icon="@android:drawable/ic_menu_help"
+      android:title="@string/preferences"/>
+</menu>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2011 Senseless Solutions 
+ *
+ * Licensed under the GNU General Public License, Version 3.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at 
+ *
+ *      http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ * 
+ * Weight Chart is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * Modified Source code: http://code.google.com/p/weight-chart/
+ * Original Source code: http://fredrik.jemla.eu/weightchart
+ */
+-->
+<resources>
+    <string name="about_weight_chart">Σχετικά με το Weight Chart</string>
+    <string name="add">Προσθήκη</string>
+    <string name="all_entries_deleted">Όλες οι καταχωρήσεις έχουν διαγραφεί</string>
+    <string name="app_name">Διάγραμμα Βάρους</string>
+    <string name="average">Μέσος Όρος των τελευταίων επτά ημερών</string>
+    <string name="bmi_value">ΔΜΣ: %.2f</string>
+    <string name="bmi_with_height">ΔΜΣ (ύψος: %s)</string>
+    <string name="cancel">Άκύρωση</string>
+    <string name="close">Κλείσιμο</string>
+    <string name="cm">cm</string>
+    <string name="count_entries">Μέτρηση καταχωρήσεων</string>
+    <string name="date_legend">Μέρα της εβδομάδας και μέρα του μήνα</string>
+    <string name="delete">Διαγραφή</string>
+    <string name="delete_all_entries">Διαγραφή όλων των καταχωρήσεων</string>
+    <string name="drag_chart_to_scroll">Σύρε το διάγραμμα για κύλιση</string>
+    <string name="edit">Επεξεργασία</string>
+    <string name="end_date_input">Ημερομηνία λήξης:</string>
+    <string name="entries">Καταχωρήσεις</string>
+    <plurals name="entry_count">
+        <item quantity="one">1 καταχώρηση</item>
+	<item quantity="other">%d καταχωρήσεις</item>
+    </plurals>
+    <string name="entry_edited">Η καταχώρηση επεξεργάστηκε</string>
+    <string name="export">Εξαγωγή</string>
+    <string name="export_csv">Εξαγωγή καταχωρήσεων ως CSV</string>
+    <string name="export_ods">Εξαγωγή καταχωρήσεων ως ODS</string>
+    <string name="export_png">Εξαγωγή γραφήματος ως PNG</string>
+    <string name="exported_to">Εξαγωγή σε %s</string>
+    <string name="failed_open_file">Αποτυχία ανοίγματος ή ανάγνωσης από το αρχείο %s</string>
+    <string name="failed_save_file">Αποτυχία δημιουργίας ή εγγραφής στο αρχείο %s</string>
+    <string name="file_input">Αρχείο:</string>
+    <string name="file_not_found">Το αρχείο δε βρέθηκε: %s</string>
+    <string name="free_software_license">Ελεύθερη άδεια χρήσης λογισμικού</string>
+    <string name="ft">ft</string>
+    <string name="height">Ύψος</string>
+    <string name="height_cm">%d cm</string>
+    <string name="height_ft" formatted="false">%d ft %d in</string>
+    <string name="height_input">Ύψος:</string>
+    <string name="height_unit">Μονάδα μέτρησης ύψους</string>
+    <string name="height_unit_input">Μονάδα μέτρησης ύψους:</string>
+    <string-array name="height_unit_labels">
+        <item>εκατοστό</item>
+        <item>πόδι</item>
+    </string-array>
+    <string-array name="height_unit_values">
+        <item>cm</item>
+        <item>ft</item>
+    </string-array>
+    <string name="import_">Εισαγωγή</string>
+    <string name="import_csv">Εισαγωγή καταχωρήσεων από CSV</string>
+    <string name="imported_from">Εισήχθησαν από %s</string>
+    <string name="in">in</string>
+    <string name="invalid_days">Άκυρος αριθμός ημερών</string>
+    <string name="invalid_file_format">Άκυρη μορφή αρχείου</string>
+    <string name="invalid_height">Άκυρο ύψος</string>
+    <string name="invalid_size">Άκυρο μέγεθος</string>
+    <string name="invalid_weight">Άκυρο βάρος</string>
+    <string name="kg">kg</string>
+    <string name="lb">lb</string>
+    <string name="legend">Θρύλος</string>
+    <string name="license_description" formatted="false">"
+    Διάγραμμα Βάρους v2\nCopyright 2011\n\nΤο Διάγραμμα βάρους είναι λογισμικό 
+    ελεύθερης χρήσης: μπορείτε να το αναδιανείμετε και/ή να το τροποποιήσετε βάσει των 
+    όρων της Άδειας Χρήσης για το Ευρύ Κοινό GNU όπως αυτή δημοσιεύτηκε από το Ίδρυμα 
+    Ελεύθερου Λογισμικού, είτε την έκδοση 3 της Άδειας, ή (κατ'επιλογή σας) οποιαδήποτε 
+    μεταγενέστερη έκδοση.\n\nΤο Διάγραμμα Βάρους διανέμεται με την ελπίδα ότι θα φανεί 
+    χρήσιμο, αλλά ΧΩΡΙΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ;χωρίς καν την εγγύηση ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ή 
+    ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟE. Δείτε την Άδεια Χρήσης για το Ευρύ Κοινό GNU 
+    για περισσότερες λεπτομέρειες.\n\nΒλέπε http://www.gnu.org/licenses/"
+    </string>
+    <string name="license_summary">GNU Άδεια Χρήσης για το Ευρύ Κοινό έκδοση 3 ή μεταγενέστερη</string>
+    <string name="media_not_available">Δεν είναι διαθέσιμη κάρτα SD</string>
+    <string name="menu_file">Αρχείο</string>
+    <string name="no_entries">Δεν υπάρχουν καταχωρήσεις</string>
+    <string name="days_input">Αριθμός ημερών που εμφανίζονται:</string>
+    <string name="ok">OK</string>
+    <string name="preferences">Προτιμήσεις</string>
+    <string name="question_delete_all">Διαγραφή όλων των καταχωρήσεων;Αυτό δε μπορεί να αναιρεθεί.</string>
+    <string name="set_manually">Χειροκίνητη ρύθμιση</string>
+    <string name="share_file">Κοινή χρήση αρχείου</string>
+    <string name="size_input">Μέγεθος:</string>
+    <string name="skip">Παράλειψη</string>
+    <string name="st">st</string>
+    <string name="tap_to_open_menu">Πατήστε για να ανοίξετε το μενού</string>
+    <string name="time">Ώρα</string>
+    <string name="transparency">Διαφάνεια</string>
+    <string name="view">Προβολή</string>
+    <string name="view_14_days">Προβολή 14 ημερών</string>
+    <string name="view_21_days">Προβολή 21 ημερών</string>
+    <string name="view_30_days">Προβολή 30 ημερών</string>
+    <string name="view_60_days">Προβολή 60 ημερών</string>
+    <string name="view_90_days">Προβολή 90 ημερών</string>
+    <string name="view_7_days">Προβολή 7 ημερών</string>
+    <string name="website">Ιστοσελίδα</string>
+    <string name="website_url">http://www.senselesssolutions.com/android/weightchart</string>
+    <string name="website_url_origin">http://fredrik.jemla.eu/weightchart</string>
+    <string-array name="weekdays">
+        <item>ΔΕ</item>
+        <item>ΤΡ</item>
+        <item>ΤΕ</item>
+        <item>ΠΕ</item>
+        <item>ΠΑ</item>
+        <item>ΣΑ</item>
+        <item>ΚΥ</item>
+    </string-array>
+    <string name="weight">Βάρος</string>
+    <!-- Added by aitorthered@senselesssolutions -->
+	<string name="weight_goal">Στόχος βάρους</string>
+    <string name="weight_max">Ειδοποίηση βάρους (μέγιστο βάρος)</string>
+    <string name="weight_goal_input">Εισάγετε το στόχο βάρους σας</string>
+    <string name="weight_max_input">Εισάγετε το μέγιστο βάρος σας</string>
+    <string name="ad_goal_weight_title">Στόχος βάρους</string>
+    <string name="ad_max_weight_title">Μέγιστο Βάρος</string>
+    <string name="alert_dialog_ok">Αποδοχή</string>
+    <string name="alert_dialog_cancel">Ακύρωση</string>
+    <string name="watch_weight">Προσέξτε το βάρος σας!</string>
+    <string name="max_weight_label">Μέγιστο Βάρος</string>
+    <string name="max_weight_alert">Είστε πάνω από το μέγιστο βάρος!</string>
+    <string name="goal_weight_label">Στόχος Βάρους</string>
+    
+    <string name="market_url">market://details?id=es.senselesssolutions.gpl.weightchart</string>
+    <string name="market">Το Διάγραμμα Βάρους στο Android Market</string>
+    <string name="market_url_author">market://search?q=pub:aitorTheRed@senselesssolutions</string>
+    <string name="market_author">Περισσότερα από αυτόν τον δημιουργό</string>
+    <string name="about_wc_summary">Βασισμένος σε πηγαίο κώδικα GPL</string>
+    <string name="about_wc">Σχετικά με το Διάγραμμα Βάρους</string>
+    <string name="about_description" formatted="false">
+    	Αυτή η εφαρμογή είναι τροποποίηση της εφαρμογής Ελεύθερης Άδειας Χρήσης GNU:\n
+    	http://fredrik.jemla.eu/weightchart\n
+    	Ήθελα απλά να προσθέσω μερικά χαρακτηριστικά, έτσι κατέβασα τον κώδικα και τα πρόσθεσα :-).
+    	Εάν έχετε οποιοδήποτε πρόβλημα, παρακαλώ επικοινωνήστε με το δημιουργό:
+    	weightchart@senselesssolutions.com
+    </string>
+    <string name="translate_summary">Do you want Weight Chart in your own language? Press here to help us translate
+    	the texts (you will appear in the credits)</string>
+    <string name="translate">Help us translate!</string>
+    <string name="translate_email">translate-weightchart@senselesssolutions.com</string>
+    <string name="translate_email_subject">Translate to [your language] [Weight Chart]</string>
+    <string name="translate_email_text" formatted="false">Hello! I want to help you translate Weight Chart to my language.
+    		Just drop me an email and I will answer as soon as possible :-)
+    </string>
+    <!-- ^Added by aitorthered@senselesssolutions -->
+    <string name="weight_added">Το Βάρος προστέθηκε</string>
+    <string name="weight_kg">%.1f kg</string>
+    <string name="weight_kg_legend">Πρώτο βάρος της ημέρας (kg)</string>
+    <string name="weight_lb">%.1f lb</string>
+    <string name="weight_lb_legend">Πρώτο βάρος της ημέρας (lb)</string>
+    <string name="weight_st" formatted="false">%d st %.1f lb</string>
+    <string name="weight_st_legend">Πρώτο βάρος της ημέρας (st)</string>
+    <string name="weight_unit">Μονάδα μέτρησης βάρους</string>
+    <string-array name="weight_unit_labels">
+        <item>kilogram</item>κιλό
+        <item>pound</item>λίβρα
+        <item>stone</item>
+    </string-array>
+    <string-array name="weight_unit_values">
+        <item>kg</item>
+        <item>lb</item>
+        <item>st</item>
+    </string-array>
+</resources>

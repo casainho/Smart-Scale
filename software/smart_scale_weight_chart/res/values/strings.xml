@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2011 Senseless Solutions 
+ *
+ * Licensed under the GNU General Public License, Version 3.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at 
+ *
+ *      http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ * 
+ * Weight Chart is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * Modified Source code: http://code.google.com/p/weight-chart/
+ * Original Source code: http://fredrik.jemla.eu/weightchart
+ */
+
+-->
+
+<resources>
+    <string name="about_weight_chart">About Weight Chart</string>
+    <string name="add">Add</string>
+    <string name="all_entries_deleted">All entries are now deleted</string>
+    <string name="app_name">Weight Chart</string>
+    <string name="average">Average of last seven days</string>
+    <string name="bmi_value">BMI: %.2f</string>
+    <string name="bmi_with_height">BMI (height: %s)</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="cm">cm</string>
+    <string name="count_entries">Count entries</string>
+    <string name="date_legend">Day of week and day of month</string>
+    <string name="delete">Delete</string>
+    <string name="delete_all_entries">Delete all entries</string>
+    <string name="drag_chart_to_scroll">Drag chart to scroll</string>
+    <string name="edit">Edit</string>
+    <string name="end_date_input">End date:</string>
+    <string name="entries">Entries</string>
+    <plurals name="entry_count">
+        <item quantity="one">1 entry</item>
+	<item quantity="other">%d entries</item>
+    </plurals>
+    <string name="entry_edited">Entry edited</string>
+    <string name="export">Export</string>
+    <string name="export_csv">Export entries as CSV</string>
+    <string name="export_ods">Export entries as ODS</string>
+    <string name="export_png">Export chart as PNG</string>
+    <string name="exported_to">Exported to %s</string>
+    <string name="failed_open_file">Failed to open or read from file %s</string>
+    <string name="failed_save_file">Failed to create or write to file %s</string>
+    <string name="file_input">File:</string>
+    <string name="file_not_found">File not found: %s</string>
+    <string name="free_software_license">Free software license</string>
+    <string name="ft">ft</string>
+    <string name="height">Height</string>
+    <string name="height_cm">%d cm</string>
+    <string name="height_ft" formatted="false">%d ft %d in</string>
+    <string name="height_input">Height:</string>
+    <string name="height_unit">Height unit</string>
+    <string name="height_unit_input">Height unit:</string>
+    <string-array name="height_unit_labels">
+        <item>centimeter</item>
+        <item>foot</item>
+    </string-array>
+    <string-array name="height_unit_values">
+        <item>cm</item>
+        <item>ft</item>
+    </string-array>
+    <string name="import_">Import</string>
+    <string name="import_csv">Import entries from CSV</string>
+    <string name="imported_from">Imported from %s</string>
+    <string name="in">in</string>
+    <string name="invalid_days">Invalid number of days</string>
+    <string name="invalid_file_format">Invalid file format</string>
+    <string name="invalid_height">Invalid height</string>
+    <string name="invalid_size">Invalid size</string>
+    <string name="invalid_weight">Invalid weight</string>
+    <string name="kg">kg</string>
+    <string name="lb">lb</string>
+    <string name="legend">Legend</string>
+    <string name="license_description">Weight Chart v2\nCopyright 2011\n\nWeight Chart is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nWeight Chart is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n\nSee http://www.gnu.org/licenses/</string>
+    <string name="license_summary">GNU General Public License version 3 or later</string>
+    <string name="media_not_available">SD card is not available</string>
+    <string name="menu_file">File</string>
+    <string name="no_entries">No entries</string>
+    <string name="days_input">Number of days to show:</string>
+    <string name="ok">OK</string>
+    <string name="preferences">Preferences</string>
+    <string name="question_delete_all">Delete all entries? This cannot be undone.</string>
+    <string name="set_manually">Set manually</string>
+    <string name="share_file">Share file</string>
+    <string name="size_input">Size:</string>
+    <string name="skip">Skip</string>
+    <string name="st">st</string>
+    <string name="tap_to_open_menu">Tap to open menu</string>
+    <string name="time">Time</string>
+    <string name="transparency">Transparency</string>
+    <string name="view">View</string>
+    <string name="view_14_days">View 14 days</string>
+    <string name="view_21_days">View 21 days</string>
+    <string name="view_30_days">View 30 days</string>
+    <string name="view_60_days">View 60 days</string>
+    <string name="view_90_days">View 90 days</string>
+    <string name="view_7_days">View 7 days</string>
+    <string name="website">Website</string>
+    <string name="website_url">http://www.senselesssolutions.com/android/weightchart</string>
+    <string name="website_url_origin">http://fredrik.jemla.eu/weightchart</string>
+    <string-array name="weekdays">
+        <item>mo</item>
+        <item>tu</item>
+        <item>we</item>
+        <item>th</item>
+        <item>fr</item>
+        <item>sa</item>
+        <item>su</item>
+    </string-array>
+    <string name="weight">Weight</string>
+    <!-- Added by aitorthered@senselesssolutions -->
+	<string name="weight_goal">Weight goal</string>
+    <string name="weight_max">Weight alert (maximum weight)</string>
+    <string name="weight_goal_input">Input your goal weight</string>
+    <string name="weight_max_input">Input your maximum weight</string>
+    <string name="ad_goal_weight_title">Goal Weight</string>
+    <string name="ad_max_weight_title">Maximum Weight</string>
+    <string name="alert_dialog_ok">Accept</string>
+    <string name="alert_dialog_cancel">Cancel</string>
+    <string name="watch_weight">Watch your weight!</string>
+    <string name="max_weight_label">Max Weight</string>
+    <string name="max_weight_alert">You are over the weight!</string>
+    <string name="goal_weight_label">Goal Weight</string>
+    
+    <string name="market_url">market://details?id=es.senselesssolutions.gpl.weightchart</string>
+    <string name="market">Weight Chart on Android Market</string>
+    <string name="market_url_author">market://search?q=pub:aitorTheRed@senselesssolutions</string>
+    <string name="market_author">More from this developer</string>
+    <string name="about_wc_summary">Based on a GPL source code</string>
+    <string name="about_wc">About Weight Chart</string>
+    <string name="about_description" formatted="false">
+    	This application is a modification of a GNU-license application:\n
+    	http://fredrik.jemla.eu/weightchart\n
+    	I just wanted to add a few features, so I downloaded the code and added them :-).
+    	If you have any problem, please, contact the developer:
+    	weightchart@senselesssolutions.com
+    </string>
+    <string name="translate_summary">Do you want Weight Chart in your own language? Press here to help us translate
+    	the texts (you will appear in the credits)</string>
+    <string name="translate">Help us translate!</string>
+    <string name="translate_email">translate-weightchart@senselesssolutions.com</string>
+    <string name="translate_email_subject">Translate to [your language] [Weight Chart]</string>
+    <string name="translate_email_text" formatted="false">Hello! I want to help you translate Weight Chart to my language.
+    		Just drop me an email and I will answer as soon as possible :-)
+    </string>
+    <!-- ^Added by aitorthered@senselesssolutions -->
+    <string name="weight_added">Weight added</string>
+    <string name="weight_kg">%.1f kg</string>
+    <string name="weight_kg_legend">First weight of the day (kg)</string>
+    <string name="weight_lb">%.1f lb</string>
+    <string name="weight_lb_legend">First weight of the day (lb)</string>
+    <string name="weight_st" formatted="false">%d st %.1f lb</string>
+    <string name="weight_st_legend">First weight of the day (st)</string>
+    <string name="weight_unit">Weight unit</string>
+    <string-array name="weight_unit_labels">
+        <item>kilogram</item>
+        <item>pound</item>
+        <item>stone</item>
+    </string-array>
+    <string-array name="weight_unit_values">
+        <item>kg</item>
+        <item>lb</item>
+        <item>st</item>
+    </string-array>
+    <string name="scale">Scale</string>
+    <string name="bluetooth_device_name">maria</string>
+    <string name="title_find_devices">Searching for the device, wait a moment please.</string>
+</resources>

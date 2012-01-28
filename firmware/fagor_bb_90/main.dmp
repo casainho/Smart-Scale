@@ -1,0 +1,265 @@
+
+main.out:     file format elf32-littlearm
+main.out
+architecture: arm, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+    LOAD off    0x00008000 vaddr 0x00000000 paddr 0x00000000 align 2**15
+         filesz 0x000042f0 memsz 0x000042f0 flags r-x
+    LOAD off    0x00010120 vaddr 0x40000120 paddr 0x000042f0 align 2**15
+         filesz 0x00000008 memsz 0x00000f7c flags rw-
+private flags = 5000000: [Version5 EABI]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000042f0  00000000  00000000  00008000  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000008  40000120  000042f0  00010120  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000f74  40000128  000042f8  00010128  2**2
+                  ALLOC
+  3 .ARM.attributes 0000002e  00000000  00000000  00010128  2**0
+                  CONTENTS, READONLY
+  4 .comment      0000025a  00000000  00000000  00010156  2**0
+                  CONTENTS, READONLY
+  5 .debug_line   00000739  00000000  00000000  000103b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000015d7  00000000  00000000  00010ae9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000009e5  00000000  00000000  000120c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_aranges 000001e0  00000000  00000000  00012aa8  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    00000cd0  00000000  00000000  00012c88  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_pubnames 00000719  00000000  00000000  00013958  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    0000078c  00000000  00000000  00014071  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_frame  000008f0  00000000  00000000  00014800  2**2
+                  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 .text
+40000120 l    d  .data	00000000 .data
+40000128 l    d  .bss	00000000 .bss
+00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_pubnames	00000000 .debug_pubnames
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000010 l       *ABS*	00000000 UND_STACK_SIZE
+00000010 l       *ABS*	00000000 ABT_STACK_SIZE
+00000080 l       *ABS*	00000000 FIQ_STACK_SIZE
+00000080 l       *ABS*	00000000 IRQ_STACK_SIZE
+00000080 l       *ABS*	00000000 SVC_STACK_SIZE
+00000010 l       *ABS*	00000000 MODE_USR
+00000011 l       *ABS*	00000000 MODE_FIQ
+00000012 l       *ABS*	00000000 MODE_IRQ
+00000013 l       *ABS*	00000000 MODE_SVC
+00000017 l       *ABS*	00000000 MODE_ABT
+0000001b l       *ABS*	00000000 MODE_UND
+0000001f l       *ABS*	00000000 MODE_SYS
+00000080 l       *ABS*	00000000 I_BIT
+00000040 l       *ABS*	00000000 F_BIT
+00000000 l       .text	00000000 _vectors
+00000020 l       .text	00000000 Reset_Addr
+00000024 l       .text	00000000 Undef_Addr
+00000028 l       .text	00000000 SWI_Addr
+0000002c l       .text	00000000 PAbt_Addr
+00000030 l       .text	00000000 DAbt_Addr
+00000038 l       .text	00000000 FIQ_Addr
+00000034 l       .text	00000000 IRQ_Addr
+00000000 l    df *ABS*	00000000 main.c
+00000000 l    df *ABS*	00000000 system.c
+00000000 l    df *ABS*	00000000 timers.c
+00000000 l    df *ABS*	00000000 lcd.c
+00000000 l    df *ABS*	00000000 ios.c
+00000000 l    df *ABS*	00000000 err.c
+00000000 l    df *ABS*	00000000 isrsupport.c
+000019f8 l     F .text	00000028 __get_cpsr
+00001a20 l     F .text	00000024 __set_cpsr
+00000000 l    df *ABS*	00000000 uart.c
+00000000 l    df *ABS*	00000000 comms.c
+40000a6a l       .bss	00000000 state.1303
+40000a6b l       .bss	00000000 counter.1301
+40000a6c l       .bss	00000000 crc.1304
+40000a6e l       .bss	00000000 bytes_counter.1302
+40000120 l     O .data	00000001 index.1367
+40000968 l       .bss	00000000 array.1368
+40000a68 l       .bss	00000000 crc.1369
+00000000 l    df *ABS*	00000000 iap.c
+40000a70 l       .bss	00000000 param_table
+40000a84 l       .bss	00000000 result_table
+00000000 l    df *ABS*	00000000 serial_fifo.c
+00000000 l    df *ABS*	00000000 sermsg.c
+00000000 l    df *ABS*	00000000 sersendf.c
+00000000 l    df *ABS*	00000000 crc.c
+00001f84 g     F .text	0000002c _rx_fifo_data_available
+000028ec g     F .text	00000050 fifo_avail
+0000356c g     F .text	00000060 __floatdidf
+00003fa8 g     F .text	00000160 __divsf3
+000022c0 g     F .text	000001b0 send_byte
+0000421c g     F .text	0000005c __fixsfsi
+000004c0 g     F .text	00000178 system_init
+00000478 g     F .text	0000000c UNDEF_Routine
+0000266c g     F .text	000000d8 save_flash_array
+00002744 g     F .text	0000002c load_flash_array
+00002d54 g     F .text	000002bc sersendf
+40000134 g     O .bss	00000004 last_back_plane_b
+000042f0 g       .text	00000000 _etext
+40000130 g     O .bss	00000004 back_plane_b
+0000260c g     F .text	00000060 prepare_sector
+00003b70 g     F .text	000001bc __aeabi_fadd
+00003b6c g     F .text	000001c0 __subsf3
+000027b4 g     F .text	00000098 fifo_put
+00001a80 g     F .text	0000004c restoreIRQ
+00004204 g     F .text	00000018 __aeabi_fcmpgt
+000034f0 g     F .text	00000028 __floatsidf
+4000012c g     O .bss	00000004 last_back_plane_a
+00001fe4 g     F .text	00000034 _rx_fifo_receive
+00003d34 g     F .text	00000020 __aeabi_i2f
+00002770 g     F .text	00000044 fifo_init
+00004110 g     F .text	0000006c __lesf2
+00001b90 g     F .text	0000003c enableFIQ
+40000128 g       .bss	00000000 _bss_start
+000011c8 g     F .text	00000014 ios_init
+00001d70 g     F .text	00000184 uart0_int_handler
+000034cc g     F .text	00000024 __aeabi_ui2d
+0000046c g     F .text	0000000c SWI_Routine
+000031b0 g     F .text	00000000 __aeabi_drsub
+0000259c g     F .text	00000070 erase_sector
+00000660 g     F .text	00000114 timer1_init
+00002cfc g     F .text	00000058 serwrite_int32_vf
+00003518 g     F .text	00000040 __extendsfdf2
+0000385c g     F .text	0000020c __aeabi_ddiv
+000019a0 g     F .text	0000002c debug
+000031bc g     F .text	00000310 __adddf3
+00004118 g     F .text	00000064 __nesf2
+00001fb0 g     F .text	00000034 rx_fifo_data_available
+00000774 g     F .text	0000007c timer1_int_handler
+000035cc g     F .text	00000290 __aeabi_dmul
+0000117c g     F .text	0000004c lcd_send_string
+0000102c g     F .text	00000150 lcd_send_float
+000034cc g     F .text	00000024 __floatunsidf
+00000000 g       .text	00000000 _startup
+00001d58 g     F .text	00000018 uart0_int_disable
+00002b94 g     F .text	00000048 serwrite_int32
+000029d4 g     F .text	00000044 serwrite_hex8
+40000142 g     O .bss	00000001 new_time
+00003ac4 g     F .text	000000a0 __aeabi_d2f
+4000109c g       *ABS*	00000000 _bss_end
+00003b6c g     F .text	000001c0 __aeabi_fsub
+00001230 g     F .text	00000024 get_ios
+00000040 g       .text	00000000 Reset_Handler
+000041ec g     F .text	00000018 __aeabi_fcmpge
+00003a68 g     F .text	0000005c __fixdfsi
+00001bcc g     F .text	00000034 uart0_disable_THR
+00003d64 g     F .text	000000ac __floatdisf
+00002970 g     F .text	00000064 serwrite_hex4
+000030b4 g     F .text	000000fc init_crc16_tab
+00001b08 g     F .text	0000003c disableFIQ
+00000460 g     F .text	0000000c FIQ_Routine
+00004108 g     F .text	00000074 __gtsf2
+000031bc g     F .text	00000310 __aeabi_dadd
+000041d4 g     F .text	00000018 __aeabi_fcmple
+00003558 g     F .text	00000074 __aeabi_ul2d
+00000928 g     F .text	00000034 delay1_ms
+00001c38 g     F .text	00000108 uart_init
+40000128 g     O .bss	00000004 back_plane_a
+40000e9c g     O .bss	00000200 crc_tab16
+00000c4c g     F .text	000001d4 lcd_send_char
+0000251c g     F .text	00000080 write_data
+000031b8 g     F .text	00000314 __aeabi_dsub
+00003558 g     F .text	00000074 __floatundidf
+00001f34 g     F .text	00000050 tx_fifo_send
+00003d34 g     F .text	00000020 __floatsisf
+0000204c g     F .text	00000274 receive_data
+000042c8 g     O .text	00000028 powers
+00001c00 g     F .text	00000038 uart0_enable_THR
+0000421c g     F .text	0000005c __aeabi_f2iz
+00004118 g     F .text	00000064 __eqsf2
+000013b8 g     F .text	0000023c format_back_plane
+00003fa8 g     F .text	00000160 __aeabi_fdiv
+000034f0 g     F .text	00000028 __aeabi_i2d
+000009a0 g     F .text	000001c4 lcd_send_command
+4000013c g     O .bss	00000004 last_back_plane_c
+00003d54 g     F .text	000000bc __floatundisf
+0000385c g     F .text	0000020c __divdf3
+000024e0 g     F .text	0000003c iap_entry
+00003d2c g     F .text	00000028 __aeabi_ui2f
+000035cc g     F .text	00000290 __muldf3
+000008e0 g     F .text	00000048 delay_us
+000015f4 g     F .text	000003ac get_weight
+40000a98 g     O .bss	00000400 lpc_flash_array
+00002a64 g     F .text	00000048 serwrite_hex32
+00004118 g     F .text	00000064 __cmpsf2
+40000124 g     O .data	00000003 str_ox
+40000e98 g     O .bss	00000004 crc_tab16_init
+40000148 g     O .bss	00000004 data
+00002bdc g     F .text	00000120 serwrite_uint32_vf
+00000b64 g     F .text	000000e8 lcd_init
+00000160 g     F .text	000002f4 main
+00000868 g     F .text	00000044 delay_ms
+00002aac g     F .text	000000e8 serwrite_uint32
+00000638 g     F .text	00000028 system_go_idle
+00003d64 g     F .text	000000ac __aeabi_l2f
+00004110 g     F .text	0000006c __ltsf2
+00003ac4 g     F .text	000000a0 __truncdfsf2
+40000564 g     O .bss	00000400 txbuffer
+000011dc g     F .text	00000054 io_is_set
+00003010 g     F .text	000000a4 update_crc_16
+00002018 g     F .text	00000034 rx_fifo_receive
+0000356c g     F .text	00000060 __aeabi_l2d
+000008ac g     F .text	00000034 micros
+40001fdc g       *ABS*	00000000 _stack_end
+00002470 g     F .text	00000070 send_writestr
+00003d54 g     F .text	000000bc __aeabi_ul2f
+0000418c g     F .text	00000018 __aeabi_cfcmple
+00003e10 g     F .text	00000198 __mulsf3
+000019cc g     F .text	0000002c die
+0000284c g     F .text	000000a0 fifo_get
+00000484 g     F .text	0000003c feed
+40000138 g     O .bss	00000004 back_plane_c
+00004108 g     F .text	00000074 __gesf2
+00003b64 g     F .text	000001c8 __aeabi_frsub
+00000454 g     F .text	0000000c IRQ_Routine
+000041a4 g     F .text	00000018 __aeabi_fcmpeq
+00003e10 g     F .text	00000198 __aeabi_fmul
+40000144 g     O .bss	00000004 millis_ticks
+0000417c g     F .text	00000028 __aeabi_cfrcmple
+40000120 g       .data	00000000 _data
+00001acc g     F .text	0000003c enableIRQ
+40000964 g     O .bss	00000001 uart_transmitting
+000041bc g     F .text	00000018 __aeabi_fcmplt
+00002a18 g     F .text	0000004c serwrite_hex16
+00001b44 g     F .text	0000004c restoreFIQ
+40000128 g       .data	00000000 _edata
+000000d8 g     F .text	00000088 power_switch
+4000109c g       *ABS*	00000000 _end
+40000140 g     O .bss	00000002 timer1_counter
+0000095c g     F .text	00000044 e_pulse
+4000014c g     O .bss	0000000c rxfifo
+00003d2c g     F .text	00000028 __floatunsisf
+00003a68 g     F .text	0000005c __aeabi_d2iz
+0000418c g     F .text	00000018 __aeabi_cfcmpeq
+40000158 g     O .bss	0000000c txfifo
+0000293c g     F .text	00000034 fifo_free
+00001a44 g     F .text	0000003c disableIRQ
+00001d40 g     F .text	00000018 uart0_int_enable
+00001254 g     F .text	00000164 number_to_digit
+00003518 g     F .text	00000040 __aeabi_f2d
+40000164 g     O .bss	00000400 rxbuffer
+000031b8 g     F .text	00000314 __subdf3
+00000e20 g     F .text	0000020c lcd_send_int
+000007f0 g     F .text	00000078 millis
+00003b70 g     F .text	000001bc __addsf3
+00001ef4 g     F .text	00000040 _tx_fifo_send
+
+

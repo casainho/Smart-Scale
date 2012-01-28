@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2011 Senseless Solutions 
+ *
+ * Licensed under the GNU General Public License, Version 3.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at 
+ *
+ *      http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * Unless required by applicable law or agreed to in writing, software 
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and 
+ * limitations under the License.
+ * 
+ * Weight Chart is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * Modified Source code: http://code.google.com/p/weight-chart/
+ * Original Source code: http://fredrik.jemla.eu/weightchart
+ */
+
+-->
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:background="#fff"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical">
+    <LinearLayout
+      android:gravity="center_vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:orientation="vertical"
+      android:padding="8dip">
+        <TextView
+          android:text="@string/weight"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+        <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+            <EditText
+              android:id="@+id/weight_major"
+              android:layout_width="96sp"
+              android:layout_height="wrap_content"
+              android:numeric="decimal"/>
+            <TextView
+              android:id="@+id/weight_unit_major"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"/>
+            <EditText
+              android:id="@+id/weight_minor"
+              android:layout_width="96sp"
+              android:layout_height="wrap_content"
+              android:numeric="decimal"/>
+            <TextView
+              android:id="@+id/weight_unit_minor"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/lb"/>
+        </LinearLayout>
+        <TextView
+          android:text="@string/time"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+        <Button
+          android:id="@+id/set_manually"
+          android:text="@string/set_manually"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"/>
+        <LinearLayout
+          android:id="@+id/date_time"
+          android:orientation="horizontal"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content">
+            <Button
+              android:id="@+id/date"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"/>
+            <Button
+              android:id="@+id/time"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+      android:src="@android:drawable/divider_horizontal_dark"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:scaleType="fitXY"/>
+    <LinearLayout
+      android:background="@android:drawable/title_bar"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content">
+        <LinearLayout
+          android:layout_marginTop="4dip"
+          android:layout_marginBottom="4dip"
+          android:orientation="horizontal"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content">
+            <Button
+              android:id="@+id/ok"
+              android:text="@string/ok"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
