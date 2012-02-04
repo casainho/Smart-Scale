@@ -1,7 +1,5 @@
 /*
- * SDCard Bathroom Scale
- *
- * Copyright (C) Jorge Pinto aka Casainho, 2009.
+ * Copyright (C) Jorge Pinto aka Casainho, 2009, 2012.
  *
  *   casainho [at] gmail [dot] com
  *     www.casainho.net
@@ -162,9 +160,9 @@ unsigned long int format_back_plane (unsigned long int back_plane)
 char get_weight (unsigned long int back_plane_a,
         unsigned long int back_plane_b,
         unsigned long int back_plane_c,
-        float *weight)
+        unsigned int *weight)
 {
-    float weight_bck = *weight;
+    unsigned int weight_bck = *weight;
     unsigned char   lcd_input_digit,
                     digit;
 
@@ -185,7 +183,7 @@ char get_weight (unsigned long int back_plane_a,
         return 1;
     }
 
-    *weight = digit * 100;
+    *weight = digit * 1000;
 
     /* 2nd digit */
     lcd_input_digit =
@@ -199,7 +197,7 @@ char get_weight (unsigned long int back_plane_a,
         return 1;
     }
 
-    *weight += digit * 10;
+    *weight += digit * 100;
 
     /* 3rd digit */
     lcd_input_digit =
@@ -213,7 +211,7 @@ char get_weight (unsigned long int back_plane_a,
         return 1;
     }
 
-    *weight += digit;
+    *weight += digit * 10;
 
     /* 4th digit (on right side) */
     lcd_input_digit =
@@ -227,7 +225,7 @@ char get_weight (unsigned long int back_plane_a,
         return 1;
     }
 
-    *weight += digit * 0.1;
+    *weight += digit;
 
     return 0;
 }

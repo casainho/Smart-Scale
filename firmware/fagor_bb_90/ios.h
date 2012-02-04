@@ -1,7 +1,5 @@
 /*
- * SDCard Bathroom Scale
- *
- * Copyright (C) Jorge Pinto aka Casainho, 2009.
+ * Copyright (C) Jorge Pinto aka Casainho, 2009, 2012.
  *
  *   casainho [at] gmail [dot] com
  *     www.casainho.net
@@ -84,5 +82,5 @@ char number_to_digit (unsigned char *number, unsigned char *digit);
 char get_weight (unsigned long int back_plane_a,
         unsigned long int back_plane_b,
         unsigned long int back_plane_c,
-        float *weight);
+        unsigned int *weight);
 unsigned long int format_back_plane (unsigned long int back_plane);

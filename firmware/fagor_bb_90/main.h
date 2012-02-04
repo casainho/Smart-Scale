@@ -1,8 +1,10 @@
 /*
- * main.h
+ * Copyright (C) Jorge Pinto aka Casainho, 2009, 2012.
  *
- *  Created on: 17 de Ago de 2011
- *      Author: root
+ *   casainho [at] gmail [dot] com
+ *     www.casainho.net
+ *
+ * Released under the GPL Licence, Version 3
  */
 
 #ifndef MAIN_H_

@@ -1,7 +1,5 @@
 /*
- * SDCard Bathroom Scale
- *
- * Copyright (C) Jorge Pinto aka Casainho, 2009.
+ * Copyright (C) Jorge Pinto aka Casainho, 2009, 2012.
  *
  *   casainho [at] gmail [dot] com
  *     www.casainho.net

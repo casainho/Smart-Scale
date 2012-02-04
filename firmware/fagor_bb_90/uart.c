@@ -1,3 +1,12 @@
+/*
+ * Copyright (C) Jorge Pinto aka Casainho, 2012.
+ *
+ *   casainho [at] gmail [dot] com
+ *     www.casainho.net
+ *
+ * Released under the GPL Licence, Version 3
+ */
+
 #include "lpc210x.h"
 #include "serial_fifo.h"
 #include "isrsupport.h"

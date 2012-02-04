@@ -1,7 +1,5 @@
 /*
- * Smart Scale
- *
- * Copyright (C) Jorge Pinto aka Casainho, 2012.
+ * Copyright (C) Jorge Pinto aka Casainho, 2009, 2012.
  *
  *   casainho [at] gmail [dot] com
  *     www.casainho.net
@@ -60,7 +58,7 @@ void power_switch (unsigned char state)
 int main (void)
 {
     /* Initialize variables */
-    float weight = 0;
+	unsigned int weight = 0, weight_int, weight_dec;
     volatile unsigned long millis_counter = millis();
 
 	/* Initialize the system */
@@ -85,18 +83,6 @@ int main (void)
     lcd_send_command (DD_RAM_ADDR); /* LCD set first row */
     lcd_send_string ("    ----- Kg    ");
     //sersendf("Smart Scale initialization... \n");
-
-#if 0
-    int c = 0;
-    while (1)
-    {
-    	for (c = 0; c < 121; c++)
-    	{
-    		sersendf("a %d\n", c);
-    		delay_ms(1000);
-    	}
-    }
-#endif
 
 	for (;;)
 	{
@@ -124,11 +110,16 @@ int main (void)
 			{
 				lcd_send_command (DD_RAM_ADDR); /* LCD set first row */
 				lcd_send_string ("    ");
-				lcd_send_float (weight, 3, 1);
-				lcd_send_string (" Kg    ");
+
+				weight_int = (int) (weight / 10);
+				weight_dec = weight - (weight_int * 10);
+				lcd_send_int (weight_int, 3); // send first 3 numbers, integer part
+				lcd_send_char ('.');
+				lcd_send_int (weight_dec, 1); // send 1 number, decimal part
+				lcd_send_string (" Kg");
 
                 /* Update Android */
-                sersendf("a %d\n", (int) (weight * 10)); /* multiply for 10 to avoid print float */
+                sersendf("a %d\n", weight);
 			}
 
 			/* Save the backplanes */
@@ -141,14 +132,14 @@ int main (void)
 
 		else /* There are no data on original LCD */
 		{
-			if ((millis_counter + 1000) < millis()) // scale end of weight ??
+			if ((millis_counter + 100) < millis()) // scale end of weight ??
 			{
 			   /* If weight is at least 1kg and
 				*  less then 150Kg(scale maximum limit = 150kg)... */
-				if (weight >= 1 && weight <= 150)
+				if (weight >= 10 && weight <= 1500)
 				{
-	                /* Send final value to Android (3 times) */
-	                sersendf("b %d\n", (int) (weight * 10)); /* multiply for 10 to avoid print float */
+	                /* Send final value to Android */
+	                sersendf("b %d\n", weight);
 				    delay_ms(100);
 				}
 
