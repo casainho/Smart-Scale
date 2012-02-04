@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Senseless Solutions 
+ * Copyright (C) 2012 Jorge "Casainho" Pinto, casainho@gmail.com 
  *
  * Licensed under the GNU General Public License, Version 3.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,6 @@
  * modify it under the terms of the GNU General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
- * 
- * Modified Source code: http://code.google.com/p/weight-chart/
- * Original Source code: http://fredrik.jemla.eu/weightchart
  */
 
 package es.senselesssolutions.gpl.weightchart;
