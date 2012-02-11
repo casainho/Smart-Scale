@@ -26,14 +26,20 @@
 -->
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListPreference
-      android:entries="@array/weight_unit_labels"
-      android:entryValues="@array/weight_unit_values"
-      android:key="weight_unit"
-      android:title="@string/weight_unit"/>
-    <Preference
-      android:key="height"
-      android:title="@string/height"/>
+    <PreferenceCategory
+      android:title="@string/preferences">
+	    <ListPreference
+	      android:entries="@array/weight_unit_labels"
+	      android:entryValues="@array/weight_unit_values"
+	      android:key="weight_unit"
+	      android:title="@string/weight_unit"/>
+	    <Preference
+	      android:key="height"
+	      android:title="@string/height"/>  
+	    <Preference
+	      android:key="view_days"
+	      android:title="@string/view_days"/>
+    </PreferenceCategory>
       
     <PreferenceCategory
       android:title="@string/watch_weight">

@@ -32,6 +32,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.content.SharedPreferences;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -53,6 +54,12 @@ public class ChartActivity extends Activity {
 		setContentView(R.layout.chart);
 		mDatabase = new Database(this);
 		mDraw = new ChartDraw(this, mDatabase, new GregorianCalendar());
+		
+		
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+		String viewDays = preferences.getString("view_days", "");
+		setDays(Integer.parseInt(viewDays));
+		
 		((ChartView) findViewById(R.id.chart)).setChartDraw(mDraw);
 		mGestureDetector = new GestureDetector(
 				new GestureDetector.SimpleOnGestureListener() {

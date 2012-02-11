@@ -44,6 +44,7 @@ public class PreferencesActivity extends PreferenceActivity {
 	private final static int DIALOG_GOAL = 10;
 	private final static int DIALOG_MAX = 11;
 	private final static int DIALOG_ABOUT = 12;
+	private final static int DIALOG_VIEW_DAYS = 20;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +81,13 @@ public class PreferencesActivity extends PreferenceActivity {
 								.getDefaultSharedPreferences(
 										PreferencesActivity.this).getInt(
 										"height", 0) < 1 ? 1 : 2);
+						return true;
+					}
+				});
+		findPreference("view_days").setOnPreferenceClickListener(
+				new Preference.OnPreferenceClickListener() {
+					public boolean onPreferenceClick(Preference preference) {
+						showDialog(DIALOG_VIEW_DAYS);
 						return true;
 					}
 				});
@@ -178,7 +186,9 @@ public class PreferencesActivity extends PreferenceActivity {
 			return createMaxWeightDialog();
 		} else if (id == DIALOG_ABOUT) {
 			return createAboutDialog();
-		}
+		} else if (id == DIALOG_VIEW_DAYS) {
+			return createViewDaysDialog();
+		}	
 		return mHeightDialog.createDialog(id);
 	}
 
@@ -301,5 +311,44 @@ public class PreferencesActivity extends PreferenceActivity {
 				getString(R.string.height_ft), height / 12, height % 12)
 				: String.format(getString(R.string.height_cm), height);
 		findPreference("height").setSummary(summary);
+	}
+	
+	// Added by casainho@gmail.com
+	private Dialog createViewDaysDialog() {
+		LayoutInflater factory = LayoutInflater.from(this);
+		final View textEntryView = factory
+				.inflate(R.layout.add_view_days, null);
+		((EditText) textEntryView.findViewById(R.id.ET_view_days))
+				.setText(PreferenceManager.getDefaultSharedPreferences(
+						PreferencesActivity.this).getString("view_days", ""));
+		return new AlertDialog.Builder(PreferencesActivity.this)
+				// .setIcon(R.drawable.alert_dialog_icon)
+				.setTitle(R.string.add_view_days_title)
+				.setView(textEntryView)
+				.setPositiveButton(R.string.alert_dialog_ok,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int whichButton) {
+								String summary = ((EditText) textEntryView
+										.findViewById(R.id.ET_view_days))
+										.getText().toString();
+								findPreference("view_days").setSummary(
+										summary + " " + getString(R.string.days));
+								SharedPreferences.Editor edit = PreferenceManager
+										.getDefaultSharedPreferences(
+												PreferencesActivity.this)
+										.edit();
+								edit.putString("view_days", summary);
+								edit.commit();
+							}
+						})
+				.setNegativeButton(R.string.alert_dialog_cancel,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int whichButton) {
+
+								/* User clicked cancel so do some stuff */
+							}
+						}).create();
 	}
 }

@@ -181,4 +181,10 @@
     <string name="scale">Scale</string>
     <string name="bluetooth_device_name">maria</string>
     <string name="title_find_devices">Searching for the device, wait a moment please.</string>
+    
+    <!-- ^Added by casainho@gmail.com -->
+    <string name="days">days</string>
+    <string name="view_days">View Days</string>
+    <string name="view_days_input">Input the number of the days</string>
+    <string name="add_view_days_title">View Days</string>
 </resources>
