@@ -32,7 +32,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.content.SharedPreferences;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -55,9 +54,10 @@ public class ChartActivity extends Activity {
 		mDatabase = new Database(this);
 		mDraw = new ChartDraw(this, mDatabase, new GregorianCalendar());
 		
-		
+		// Added by casainho@gmail.com
+		// setup the number of days to view
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-		String viewDays = preferences.getString("view_days", "");
+		String viewDays = preferences.getString("view_days", "90");
 		setDays(Integer.parseInt(viewDays));
 		
 		((ChartView) findViewById(R.id.chart)).setChartDraw(mDraw);

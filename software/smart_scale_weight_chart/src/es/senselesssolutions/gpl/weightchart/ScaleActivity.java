@@ -21,7 +21,6 @@
 
 package es.senselesssolutions.gpl.weightchart;
 
-import java.util.GregorianCalendar;
 import java.util.Vector;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;

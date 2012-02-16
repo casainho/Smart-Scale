@@ -60,6 +60,10 @@ public class PreferencesActivity extends PreferenceActivity {
 				preferences.getString("weight_max", "") + " "
 						+ findPreference("weight_unit").getSummary());
 		updateHeight();
+		
+		// Added by casainho@gmail.com
+		updateViewDays();
+		
 		mHeightDialog = new HeightDialog(this) {
 			protected void done() {
 				removeDialog(2);
@@ -84,6 +88,7 @@ public class PreferencesActivity extends PreferenceActivity {
 						return true;
 					}
 				});
+		// Added by casainho@gmail.com
 		findPreference("view_days").setOnPreferenceClickListener(
 				new Preference.OnPreferenceClickListener() {
 					public boolean onPreferenceClick(Preference preference) {
@@ -91,6 +96,7 @@ public class PreferencesActivity extends PreferenceActivity {
 						return true;
 					}
 				});
+		
 		findPreference("weight_goal").setOnPreferenceClickListener(
 				new Preference.OnPreferenceClickListener() {
 					public boolean onPreferenceClick(Preference preference) {
@@ -186,6 +192,8 @@ public class PreferencesActivity extends PreferenceActivity {
 			return createMaxWeightDialog();
 		} else if (id == DIALOG_ABOUT) {
 			return createAboutDialog();
+
+			// Added by casainho@gmail.com	
 		} else if (id == DIALOG_VIEW_DAYS) {
 			return createViewDaysDialog();
 		}	
@@ -311,6 +319,14 @@ public class PreferencesActivity extends PreferenceActivity {
 				getString(R.string.height_ft), height / 12, height % 12)
 				: String.format(getString(R.string.height_cm), height);
 		findPreference("height").setSummary(summary);
+	}
+	
+	// Added by casainho@gmail.com
+	private void updateViewDays() {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(PreferencesActivity.this);
+		String summary = preferences.getString("view_days", "");
+		findPreference("view_days").setSummary(summary);
 	}
 	
 	// Added by casainho@gmail.com
