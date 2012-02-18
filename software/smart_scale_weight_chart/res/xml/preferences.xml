@@ -39,6 +39,18 @@
 	    <Preference
 	      android:key="view_days"
 	      android:title="@string/view_days"/>
+        <CheckBoxPreference
+          android:key="show_weight"
+          android:title="@string/show_weight"
+          android:defaultValue="true"/>
+        <CheckBoxPreference
+          android:key="show_average"
+          android:title="@string/show_average"
+          android:defaultValue="true"/>
+   	    <CheckBoxPreference
+          android:key="show_bmi"
+          android:title="@string/show_bmi"
+          android:defaultValue="true"/>
     </PreferenceCategory>
       
     <PreferenceCategory
@@ -76,6 +88,5 @@
           android:key="translate"
           android:summary="@string/translate_summary"
           android:title="@string/translate"/>
-
     </PreferenceCategory>
 </PreferenceScreen>

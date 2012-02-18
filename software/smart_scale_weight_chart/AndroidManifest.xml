@@ -27,7 +27,6 @@
 <manifest
   xmlns:android="http://schemas.android.com/apk/res/android"
   package="es.senselesssolutions.gpl.weightchart"
-  android:installLocation="auto"
   android:versionCode="5" android:versionName="1.0.4">
     <application
       android:icon="@drawable/icon"

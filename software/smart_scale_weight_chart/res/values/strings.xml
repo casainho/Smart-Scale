@@ -30,7 +30,7 @@
     <string name="about_weight_chart">About Weight Chart</string>
     <string name="add">Add</string>
     <string name="all_entries_deleted">All entries are now deleted</string>
-    <string name="app_name">Weight Chart</string>
+    <string name="app_name">Smart Weight Chart</string>
     <string name="average">Average of last seven days</string>
     <string name="bmi_value">BMI: %.2f</string>
     <string name="bmi_with_height">BMI (height: %s)</string>
@@ -184,7 +184,10 @@
     
     <!-- ^Added by casainho@gmail.com -->
     <string name="days">days</string>
-    <string name="view_days">View Days</string>
+    <string name="view_days">Default view days</string>
     <string name="view_days_input">Input the number of the days</string>
     <string name="add_view_days_title">View Days</string>
+    <string name="show_weight">Show weight line</string>
+    <string name="show_average">Show average line</string>
+    <string name="show_bmi">Show BMI values</string>
 </resources>

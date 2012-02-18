@@ -32,6 +32,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.content.SharedPreferences;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;

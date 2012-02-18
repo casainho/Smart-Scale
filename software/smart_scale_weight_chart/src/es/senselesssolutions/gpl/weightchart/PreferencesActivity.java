@@ -97,6 +97,57 @@ public class PreferencesActivity extends PreferenceActivity {
 					}
 				});
 		
+		findPreference("show_weight").setOnPreferenceClickListener(
+				new Preference.OnPreferenceClickListener() {
+					public boolean onPreferenceClick(Preference preference) {
+											
+						SharedPreferences sharedPreferences = preference.getSharedPreferences();
+						boolean showWeight = sharedPreferences.getBoolean("show_weight", true);
+						
+						SharedPreferences.Editor edit = PreferenceManager
+								.getDefaultSharedPreferences(
+										PreferencesActivity.this)
+								.edit();
+						edit.putBoolean("show_weight", showWeight);
+						edit.commit();
+						return true;
+					}
+				});
+		
+		findPreference("show_average").setOnPreferenceClickListener(
+				new Preference.OnPreferenceClickListener() {
+					public boolean onPreferenceClick(Preference preference) {
+											
+						SharedPreferences sharedPreferences = preference.getSharedPreferences();
+						boolean showAverage = sharedPreferences.getBoolean("show_average", true);
+						
+						SharedPreferences.Editor edit = PreferenceManager
+								.getDefaultSharedPreferences(
+										PreferencesActivity.this)
+								.edit();
+						edit.putBoolean("show_average", showAverage);
+						edit.commit();
+						return true;
+					}
+				});
+		
+		findPreference("show_bmi").setOnPreferenceClickListener(
+				new Preference.OnPreferenceClickListener() {
+					public boolean onPreferenceClick(Preference preference) {
+											
+						SharedPreferences sharedPreferences = preference.getSharedPreferences();
+						boolean showBMI = sharedPreferences.getBoolean("show_bmi", true);
+						
+						SharedPreferences.Editor edit = PreferenceManager
+								.getDefaultSharedPreferences(
+										PreferencesActivity.this)
+								.edit();
+						edit.putBoolean("show_bmi", showBMI);
+						edit.commit();
+						return true;
+					}
+				});
+		
 		findPreference("weight_goal").setOnPreferenceClickListener(
 				new Preference.OnPreferenceClickListener() {
 					public boolean onPreferenceClick(Preference preference) {

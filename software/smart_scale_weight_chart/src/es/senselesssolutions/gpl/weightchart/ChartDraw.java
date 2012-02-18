@@ -69,6 +69,11 @@ public class ChartDraw {
 	private Context ctx = null;
 
 	/* ^Added by aitorthered@senselesssolutions */
+	
+	/* Added by casainho@gmail.com */
+	private boolean mShowWeightLine = true;
+	private boolean mShowAverageLine = true;
+	private boolean mShowBMIValues = true;
 
 	public ChartDraw(Context context, Database database, GregorianCalendar date) {
 		date.set(GregorianCalendar.HOUR_OF_DAY, 24);
@@ -106,6 +111,12 @@ public class ChartDraw {
 		SharedPreferences preferences = PreferenceManager
 				.getDefaultSharedPreferences(context);
 		String weightUnit = preferences.getString("weight_unit", null);
+		
+		/* Added by casainho@gmail.com */
+		mShowWeightLine = preferences.getBoolean("show_weight", true);
+		mShowAverageLine = preferences.getBoolean("show_average", true);
+		mShowBMIValues = preferences.getBoolean("show_bmi", true);
+		
 		try {
 			mMaxWeight = Float.parseFloat(preferences.getString("weight_max",
 					"0")) * 10;
@@ -307,11 +318,21 @@ public class ChartDraw {
 			}
 			/* Added by aitorthered@senselesssolutions for max and goal weight */
 
-			canvas.drawPath(path, mLinePaint);
+
+			if (mShowWeightLine == true) {
+				canvas.drawPath(path, mLinePaint);
+			}
 			path.lineTo(entries.get(entries.size() - 1).x, sizeY);
 			path.lineTo(entries.get(0).x, sizeY);
-			canvas.drawPath(path, mGradientPaint);
-			canvas.drawPath(averagePath, mAveragePaint);
+			
+			if (mShowWeightLine == true) {
+				canvas.drawPath(path, mGradientPaint);
+			}
+			
+			if (mShowAverageLine == true) {
+				canvas.drawPath(averagePath, mAveragePaint);
+			}
+			
 			boolean stone = mStone;
 			double bmiFactor = mBmiFactor;
 			Paint bmiBackgroundPaint = mBmiBackgroundPaint;
@@ -332,29 +353,36 @@ public class ChartDraw {
 				}
 
 				oval.set(entry.x - 3, entry.y - 3, entry.x + 3, entry.y + 3);
-				canvas.drawOval(oval, plotPaint);
-
+				if (mShowWeightLine == true) {
+					canvas.drawOval(oval, plotPaint);
+				}
+					
 				if (entry.weight != weight) {
 					weight = entry.weight;
 
-					if (bmiFactor > 0) {
-						canvas.save();
-						canvas.rotate(-90);
-						String s = numberFormat.format(bmiFactor * weight);
-						float x = (entry.y < 5 * textSize ? -3.2f : 1.8f)
-								* textSize - entry.y;
-						float y = entry.x - halfAscent;
-						canvas.drawText(s, x, y, bmiBackgroundPaint);
-						canvas.drawText(s, x, y, bmiPaint);
-						canvas.restore();
+					if (mShowBMIValues == true) {
+						if (bmiFactor > 0) {
+							canvas.save();
+							canvas.rotate(-90);
+							String s = numberFormat.format(bmiFactor * weight);
+							float x = (entry.y < 5 * textSize ? -3.2f : 1.8f)
+									* textSize - entry.y;
+							float y = entry.x - halfAscent;
+							canvas.drawText(s, x, y, bmiBackgroundPaint);
+							canvas.drawText(s, x, y, bmiPaint);
+							canvas.restore();
+						}
 					}
 
 					String s = stone ? "" + weight / 140 + "'" + weight % 140
 							/ 10. : "" + weight / 10.;
 					float x = entry.x;
 					float y = entry.y - textSize / 2;
-					canvas.drawText(s, x, y, textBackgroundPaint);
-					canvas.drawText(s, x, y, textPaint);
+					
+					if (mShowWeightLine == true) {
+						canvas.drawText(s, x, y, textBackgroundPaint);
+						canvas.drawText(s, x, y, textPaint);
+					}
 				}
 			}
 		}
