@@ -87,7 +87,7 @@
     <string name="kg">kg</string>
     <string name="lb">lb</string>
     <string name="legend">Legend</string>
-    <string name="license_description">Weight Chart v2\nCopyright 2011\n\nWeight Chart is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nWeight Chart is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n\nSee http://www.gnu.org/licenses/</string>
+    <string name="license_description">Smart Weight Chart\nCopyright 2012\n\nSmart Weight Chart is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nSmart Weight Chart is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n\nSee http://www.gnu.org/licenses/</string>
     <string name="license_summary">GNU General Public License version 3 or later</string>
     <string name="media_not_available">SD card is not available</string>
     <string name="menu_file">File</string>
@@ -112,8 +112,8 @@
     <string name="view_90_days">View 90 days</string>
     <string name="view_7_days">View 7 days</string>
     <string name="website">Website</string>
-    <string name="website_url">http://www.senselesssolutions.com/android/weightchart</string>
-    <string name="website_url_origin">http://fredrik.jemla.eu/weightchart</string>
+    <string name="website_url">http://code.google.com/p/casainho-projects/wiki/SmartScale</string>
+    <string name="website_url_origin">http://www.senselesssolutions.com/android/weightchart</string>
     <string-array name="weekdays">
         <item>mo</item>
         <item>tu</item>
@@ -138,7 +138,7 @@
     <string name="max_weight_alert">You are over the weight!</string>
     <string name="goal_weight_label">Goal Weight</string>
     
-    <string name="market_url">market://details?id=es.senselesssolutions.gpl.weightchart</string>
+    <string name="market_url">market://details?id=net.casainho.smartweightchart</string>
     <string name="market">Weight Chart on Android Market</string>
     <string name="market_url_author">market://search?q=pub:aitorTheRed@senselesssolutions</string>
     <string name="market_author">More from this developer</string>

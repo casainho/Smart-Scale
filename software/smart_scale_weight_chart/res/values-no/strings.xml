@@ -137,7 +137,7 @@
     <string name="max_weight_alert">Du har overskredet vekten!</string>
     <string name="goal_weight_label">Vektmål</string>
     
-    <string name="market_url">market://details?id=es.senselesssolutions.gpl.weightchart</string>
+    <string name="market_url">market://details?id=net.casainho.smartweightchart</string>
     <string name="market">Weight Chart i Android Market</string>
     <string name="market_url_author">market://search?q=pub:aitorTheRed@senselesssolutions</string>
     <string name="market_author">Mer fra denne utvikleren</string>

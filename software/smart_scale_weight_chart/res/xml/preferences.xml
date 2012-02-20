@@ -72,7 +72,8 @@
           android:key="license"
           android:summary="@string/license_summary"
           android:title="@string/free_software_license"/>
-        <Preference
+        
+        <!--<Preference
           android:key="market"
           android:summary="@string/market_url"
           android:title="@string/market"/>
@@ -87,6 +88,6 @@
         <Preference
           android:key="translate"
           android:summary="@string/translate_summary"
-          android:title="@string/translate"/>
+          android:title="@string/translate"/> -->
     </PreferenceCategory>
 </PreferenceScreen>

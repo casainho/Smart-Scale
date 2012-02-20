@@ -1,0 +1,475 @@
+Archive member included because of file (symbol)
+
+libgcc.a(_arm_addsubdf3.o)    lcd.o (__aeabi_dsub)
+libgcc.a(_arm_muldivdf3.o)    lcd.o (__aeabi_dmul)
+libgcc.a(_arm_fixdfsi.o)      lcd.o (__aeabi_d2iz)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x00000000         0x00008000
+ram_isp_low      0x40000040         0x000000e0         a
+ram              0x40000120         0x00001ec0
+ram_isp_high     0x40001fe0         0x00000020         a
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x40001fdc                _stack_end = 0x40001fdc
+                0x00000000                . = 0x0
+
+startup
+ *(.startup)
+
+.text           0x00000000     0x3a30
+ *(.text)
+ .text          0x00000000       0xd8 crt.o
+                0x00000000                _startup
+                0x00000040                Reset_Handler
+ .text          0x000000d8      0x31c main.o
+                0x000000d8                power_switch
+                0x00000160                main
+ .text          0x000003f4      0x20c system.o
+                0x000003f4                IRQ_Routine
+                0x00000400                FIQ_Routine
+                0x0000040c                SWI_Routine
+                0x00000418                UNDEF_Routine
+                0x00000424                feed
+                0x00000460                system_init
+                0x000005d8                system_go_idle
+ .text          0x00000600      0x2c8 timers.o
+                0x00000600                timer1_init
+                0x00000714                timer1_int_handler
+                0x00000790                millis
+                0x00000808                delay_ms
+                0x0000084c                micros
+                0x00000880                delay_us
+ .text          0x000008c8      0x8a0 lcd.o
+                0x000008c8                delay1_ms
+                0x000008fc                e_pulse
+                0x00000940                lcd_send_command
+                0x00000b04                lcd_init
+                0x00000bec                lcd_send_char
+                0x00000dc0                lcd_send_int
+                0x00000fcc                lcd_send_float
+                0x0000111c                lcd_send_string
+ .text          0x00001168      0x730 ios.o
+                0x00001168                ios_init
+                0x0000117c                io_is_set
+                0x000011d0                get_ios
+                0x000011f4                number_to_digit
+                0x00001358                format_back_plane
+                0x00001594                get_weight
+ .text          0x00001898       0x58 err.o
+                0x00001898                debug
+                0x000018c4                die
+ .text          0x000018f0      0x1d4 isrsupport.o
+                0x0000193c                disableIRQ
+                0x00001978                restoreIRQ
+                0x000019c4                enableIRQ
+                0x00001a00                disableFIQ
+                0x00001a3c                restoreFIQ
+                0x00001a88                enableFIQ
+ .text          0x00001ac4      0x480 uart.o
+                0x00001ac4                uart0_disable_THR
+                0x00001af8                uart0_enable_THR
+                0x00001b30                uart_init
+                0x00001c38                uart0_int_enable
+                0x00001c50                uart0_int_disable
+                0x00001c68                uart0_int_handler
+                0x00001dec                _tx_fifo_send
+                0x00001e2c                tx_fifo_send
+                0x00001e7c                _rx_fifo_data_available
+                0x00001ea8                rx_fifo_data_available
+                0x00001edc                _rx_fifo_receive
+                0x00001f10                rx_fifo_receive
+ .text          0x00001f44      0x494 comms.o
+                0x00001f44                receive_data
+                0x000021b8                send_byte
+                0x00002368                send_writestr
+ .text          0x000023d8      0x290 iap.o
+                0x000023d8                iap_entry
+                0x00002414                write_data
+                0x00002494                erase_sector
+                0x00002504                prepare_sector
+                0x00002564                save_flash_array
+                0x0000263c                load_flash_array
+ .text          0x00002668      0x200 serial_fifo.o
+                0x00002668                fifo_init
+                0x000026ac                fifo_put
+                0x00002744                fifo_get
+                0x000027e4                fifo_avail
+                0x00002834                fifo_free
+ .text          0x00002868      0x3e4 sermsg.o
+                0x00002868                serwrite_hex4
+                0x000028cc                serwrite_hex8
+                0x00002910                serwrite_hex16
+                0x0000295c                serwrite_hex32
+                0x000029a4                serwrite_uint32
+                0x00002a8c                serwrite_int32
+                0x00002ad4                serwrite_uint32_vf
+                0x00002bf4                serwrite_int32_vf
+ .text          0x00002c4c      0x2bc sersendf.o
+                0x00002c4c                sersendf
+ .text          0x00002f08      0x1a0 crc.o
+                0x00002f08                update_crc_16
+                0x00002fac                init_crc16_tab
+ .text          0x000030a8      0x41c libgcc.a(_arm_addsubdf3.o)
+                0x000030a8                __aeabi_drsub
+                0x000030b0                __aeabi_dsub
+                0x000030b0                __subdf3
+                0x000030b4                __adddf3
+                0x000030b4                __aeabi_dadd
+                0x000033c4                __aeabi_ui2d
+                0x000033c4                __floatunsidf
+                0x000033e8                __floatsidf
+                0x000033e8                __aeabi_i2d
+                0x00003410                __extendsfdf2
+                0x00003410                __aeabi_f2d
+                0x00003450                __aeabi_ul2d
+                0x00003450                __floatundidf
+                0x00003464                __floatdidf
+                0x00003464                __aeabi_l2d
+ .text          0x000034c4      0x49c libgcc.a(_arm_muldivdf3.o)
+                0x000034c4                __aeabi_dmul
+                0x000034c4                __muldf3
+                0x00003754                __aeabi_ddiv
+                0x00003754                __divdf3
+ .text          0x00003960       0x5c libgcc.a(_arm_fixdfsi.o)
+                0x00003960                __fixdfsi
+                0x00003960                __aeabi_d2iz
+ *(.rodata)
+ .rodata        0x000039bc       0x44 main.o
+ .rodata        0x00003a00        0x8 comms.o
+ .rodata        0x00003a08       0x28 sermsg.o
+                0x00003a08                powers
+ *(.rodata*)
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+                0x00003a30                _etext = .
+
+.vfp11_veneer   0x00003a30        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00003a30        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.data           0x40000120        0x8 load address 0x00003a30
+                0x40000120                _data = .
+ *(.data)
+ .data          0x40000120        0x0 crt.o
+ .data          0x40000120        0x0 main.o
+ .data          0x40000120        0x0 system.o
+ .data          0x40000120        0x0 timers.o
+ .data          0x40000120        0x0 lcd.o
+ .data          0x40000120        0x0 ios.o
+ .data          0x40000120        0x0 err.o
+ .data          0x40000120        0x0 isrsupport.o
+ .data          0x40000120        0x0 uart.o
+ .data          0x40000120        0x1 comms.o
+ .data          0x40000121        0x0 iap.o
+ .data          0x40000121        0x0 serial_fifo.o
+ .data          0x40000121        0x0 sermsg.o
+ *fill*         0x40000121        0x3 00
+ .data          0x40000124        0x4 sersendf.o
+                0x40000124                str_ox
+ .data          0x40000128        0x0 crc.o
+ .data          0x40000128        0x0 libgcc.a(_arm_addsubdf3.o)
+ .data          0x40000128        0x0 libgcc.a(_arm_muldivdf3.o)
+ .data          0x40000128        0x0 libgcc.a(_arm_fixdfsi.o)
+                0x40000128                _edata = .
+
+.bss            0x40000128      0xf74 load address 0x00003a38
+                0x40000128                _bss_start = .
+ *(.bss)
+ .bss           0x40000128        0x0 crt.o
+ .bss           0x40000128       0x1c main.o
+                0x40000128                back_plane_a
+                0x4000012c                last_back_plane_a
+                0x40000130                back_plane_b
+                0x40000134                last_back_plane_b
+                0x40000138                back_plane_c
+                0x4000013c                last_back_plane_c
+                0x40000140                timer1_counter
+                0x40000142                new_time
+ .bss           0x40000144        0x0 system.o
+ .bss           0x40000144        0x4 timers.o
+                0x40000144                millis_ticks
+ .bss           0x40000148        0x4 lcd.o
+                0x40000148                data
+ .bss           0x4000014c        0x0 ios.o
+ .bss           0x4000014c        0x0 err.o
+ .bss           0x4000014c        0x0 isrsupport.o
+ .bss           0x4000014c      0x81c uart.o
+                0x4000014c                rxfifo
+                0x40000158                txfifo
+                0x40000164                rxbuffer
+                0x40000564                txbuffer
+                0x40000964                uart_transmitting
+ .bss           0x40000968      0x108 comms.o
+ .bss           0x40000a70      0x428 iap.o
+                0x40000a98                lpc_flash_array
+ .bss           0x40000e98        0x0 serial_fifo.o
+ .bss           0x40000e98        0x0 sermsg.o
+ .bss           0x40000e98        0x0 sersendf.o
+ .bss           0x40000e98      0x204 crc.o
+                0x40000e98                crc_tab16_init
+                0x40000e9c                crc_tab16
+ .bss           0x4000109c        0x0 libgcc.a(_arm_addsubdf3.o)
+ .bss           0x4000109c        0x0 libgcc.a(_arm_muldivdf3.o)
+ .bss           0x4000109c        0x0 libgcc.a(_arm_fixdfsi.o)
+                0x4000109c                . = ALIGN (0x4)
+                0x4000109c                _bss_end = .
+                0x4000109c                _end = .
+LOAD crt.o
+LOAD main.o
+LOAD system.o
+LOAD timers.o
+LOAD lcd.o
+LOAD ios.o
+LOAD err.o
+LOAD isrsupport.o
+LOAD uart.o
+LOAD comms.o
+LOAD iap.o
+LOAD serial_fifo.o
+LOAD sermsg.o
+LOAD sersendf.o
+LOAD crc.o
+LOAD libm.a
+LOAD libc.a
+LOAD libgcc.a
+OUTPUT(main.out elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x2e
+ .ARM.attributes
+                0x00000000       0x16 crt.o
+ .ARM.attributes
+                0x00000016       0x32 main.o
+ .ARM.attributes
+                0x00000048       0x32 system.o
+ .ARM.attributes
+                0x0000007a       0x32 timers.o
+ .ARM.attributes
+                0x000000ac       0x32 lcd.o
+ .ARM.attributes
+                0x000000de       0x32 ios.o
+ .ARM.attributes
+                0x00000110       0x32 err.o
+ .ARM.attributes
+                0x00000142       0x32 isrsupport.o
+ .ARM.attributes
+                0x00000174       0x32 uart.o
+ .ARM.attributes
+                0x000001a6       0x32 comms.o
+ .ARM.attributes
+                0x000001d8       0x32 iap.o
+ .ARM.attributes
+                0x0000020a       0x32 serial_fifo.o
+ .ARM.attributes
+                0x0000023c       0x32 sermsg.o
+ .ARM.attributes
+                0x0000026e       0x32 sersendf.o
+ .ARM.attributes
+                0x000002a0       0x32 crc.o
+ .ARM.attributes
+                0x000002d2       0x1a libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x000002ec       0x1a libgcc.a(_arm_muldivdf3.o)
+ .ARM.attributes
+                0x00000306       0x1a libgcc.a(_arm_fixdfsi.o)
+
+.comment        0x00000000      0x25a
+ .comment       0x00000000       0x2b main.o
+ .comment       0x0000002b       0x2b system.o
+ .comment       0x00000056       0x2b timers.o
+ .comment       0x00000081       0x2b lcd.o
+ .comment       0x000000ac       0x2b ios.o
+ .comment       0x000000d7       0x2b err.o
+ .comment       0x00000102       0x2b isrsupport.o
+ .comment       0x0000012d       0x2b uart.o
+ .comment       0x00000158       0x2b comms.o
+ .comment       0x00000183       0x2b iap.o
+ .comment       0x000001ae       0x2b serial_fifo.o
+ .comment       0x000001d9       0x2b sermsg.o
+ .comment       0x00000204       0x2b sersendf.o
+ .comment       0x0000022f       0x2b crc.o
+
+.debug_line     0x00000000      0x734
+ .debug_line    0x00000000       0x5f crt.o
+ .debug_line    0x0000005f       0x75 main.o
+ .debug_line    0x000000d4       0x5d system.o
+ .debug_line    0x00000131       0x5e timers.o
+ .debug_line    0x0000018f       0xba lcd.o
+ .debug_line    0x00000249       0xb0 ios.o
+ .debug_line    0x000002f9       0x3d err.o
+ .debug_line    0x00000336       0x60 isrsupport.o
+ .debug_line    0x00000396       0x9d uart.o
+ .debug_line    0x00000433       0x90 comms.o
+ .debug_line    0x000004c3       0x71 iap.o
+ .debug_line    0x00000534       0x6c serial_fifo.o
+ .debug_line    0x000005a0       0x71 sermsg.o
+ .debug_line    0x00000611       0xd2 sersendf.o
+ .debug_line    0x000006e3       0x51 crc.o
+
+.debug_info     0x00000000     0x15ec
+ .debug_info    0x00000000       0x75 crt.o
+ .debug_info    0x00000075      0x169 main.o
+ .debug_info    0x000001de       0xd1 system.o
+ .debug_info    0x000002af      0x131 timers.o
+ .debug_info    0x000003e0      0x20f lcd.o
+ .debug_info    0x000005ef      0x19c ios.o
+ .debug_info    0x0000078b       0x84 err.o
+ .debug_info    0x0000080f      0x1a6 isrsupport.o
+ .debug_info    0x000009b5      0x297 uart.o
+ .debug_info    0x00000c4c      0x1a9 comms.o
+ .debug_info    0x00000df5      0x24f iap.o
+ .debug_info    0x00001044      0x1ac serial_fifo.o
+ .debug_info    0x000011f0      0x1ed sermsg.o
+ .debug_info    0x000013dd       0xf1 sersendf.o
+ .debug_info    0x000014ce      0x11e crc.o
+
+.debug_abbrev   0x00000000      0x9e5
+ .debug_abbrev  0x00000000       0x14 crt.o
+ .debug_abbrev  0x00000014       0x99 main.o
+ .debug_abbrev  0x000000ad       0x5a system.o
+ .debug_abbrev  0x00000107       0xca timers.o
+ .debug_abbrev  0x000001d1       0xd5 lcd.o
+ .debug_abbrev  0x000002a6       0x8b ios.o
+ .debug_abbrev  0x00000331       0x6a err.o
+ .debug_abbrev  0x0000039b       0xa8 isrsupport.o
+ .debug_abbrev  0x00000443      0x127 uart.o
+ .debug_abbrev  0x0000056a       0xc3 comms.o
+ .debug_abbrev  0x0000062d       0xcd iap.o
+ .debug_abbrev  0x000006fa       0xe6 serial_fifo.o
+ .debug_abbrev  0x000007e0       0x92 sermsg.o
+ .debug_abbrev  0x00000872       0xc9 sersendf.o
+ .debug_abbrev  0x0000093b       0xaa crc.o
+
+.debug_aranges  0x00000000      0x1e0
+ .debug_aranges
+                0x00000000       0x20 crt.o
+ .debug_aranges
+                0x00000020       0x20 main.o
+ .debug_aranges
+                0x00000040       0x20 system.o
+ .debug_aranges
+                0x00000060       0x20 timers.o
+ .debug_aranges
+                0x00000080       0x20 lcd.o
+ .debug_aranges
+                0x000000a0       0x20 ios.o
+ .debug_aranges
+                0x000000c0       0x20 err.o
+ .debug_aranges
+                0x000000e0       0x20 isrsupport.o
+ .debug_aranges
+                0x00000100       0x20 uart.o
+ .debug_aranges
+                0x00000120       0x20 comms.o
+ .debug_aranges
+                0x00000140       0x20 iap.o
+ .debug_aranges
+                0x00000160       0x20 serial_fifo.o
+ .debug_aranges
+                0x00000180       0x20 sermsg.o
+ .debug_aranges
+                0x000001a0       0x20 sersendf.o
+ .debug_aranges
+                0x000001c0       0x20 crc.o
+
+.debug_loc      0x00000000      0xcd0
+ .debug_loc     0x00000000       0x56 main.o
+ .debug_loc     0x00000056      0x12d system.o
+ .debug_loc     0x00000183      0x102 timers.o
+ .debug_loc     0x00000285      0x158 lcd.o
+ .debug_loc     0x000003dd      0x102 ios.o
+ .debug_loc     0x000004df       0x56 err.o
+ .debug_loc     0x00000535      0x158 isrsupport.o
+ .debug_loc     0x0000068d      0x204 uart.o
+ .debug_loc     0x00000891       0x81 comms.o
+ .debug_loc     0x00000912      0x102 iap.o
+ .debug_loc     0x00000a14       0xd7 serial_fifo.o
+ .debug_loc     0x00000aeb      0x158 sermsg.o
+ .debug_loc     0x00000c43       0x37 sersendf.o
+ .debug_loc     0x00000c7a       0x56 crc.o
+
+.debug_pubnames
+                0x00000000      0x719
+ .debug_pubnames
+                0x00000000       0xc1 main.o
+ .debug_pubnames
+                0x000000c1       0x80 system.o
+ .debug_pubnames
+                0x00000141       0x7a timers.o
+ .debug_pubnames
+                0x000001bb       0xa1 lcd.o
+ .debug_pubnames
+                0x0000025c       0x72 ios.o
+ .debug_pubnames
+                0x000002ce       0x24 err.o
+ .debug_pubnames
+                0x000002f2       0x6a isrsupport.o
+ .debug_pubnames
+                0x0000035c      0x155 uart.o
+ .debug_pubnames
+                0x000004b1       0x43 comms.o
+ .debug_pubnames
+                0x000004f4       0x91 iap.o
+ .debug_pubnames
+                0x00000585       0x57 serial_fifo.o
+ .debug_pubnames
+                0x000005dc       0xbb sermsg.o
+ .debug_pubnames
+                0x00000697       0x2a sersendf.o
+ .debug_pubnames
+                0x000006c1       0x58 crc.o
+
+.debug_str      0x00000000      0x759
+ .debug_str     0x00000000      0x117 main.o
+                                0x152 (size before relaxing)
+ .debug_str     0x00000117       0x5b system.o
+                                 0xbb (size before relaxing)
+ .debug_str     0x00000172       0x64 timers.o
+                                 0xea (size before relaxing)
+ .debug_str     0x000001d6       0xa7 lcd.o
+                                0x14c (size before relaxing)
+ .debug_str     0x0000027d       0x78 ios.o
+                                0x142 (size before relaxing)
+ .debug_str     0x000002f5        0xc err.o
+                                 0x6a (size before relaxing)
+ .debug_str     0x00000301       0x72 isrsupport.o
+                                 0xe9 (size before relaxing)
+ .debug_str     0x00000373       0xea uart.o
+                                0x195 (size before relaxing)
+ .debug_str     0x0000045d       0x56 comms.o
+                                 0xe2 (size before relaxing)
+ .debug_str     0x000004b3      0x14b iap.o
+                                0x1be (size before relaxing)
+ .debug_str     0x000005fe       0x44 serial_fifo.o
+                                 0xc7 (size before relaxing)
+ .debug_str     0x00000642       0x8e sermsg.o
+                                0x11c (size before relaxing)
+ .debug_str     0x000006d0       0x45 sersendf.o
+                                 0xc4 (size before relaxing)
+ .debug_str     0x00000715       0x44 crc.o
+                                 0xae (size before relaxing)
+
+.debug_frame    0x00000000      0x8e8
+ .debug_frame   0x00000000       0x48 main.o
+ .debug_frame   0x00000048       0xbc system.o
+ .debug_frame   0x00000104       0xb0 timers.o
+ .debug_frame   0x000001b4       0xf0 lcd.o
+ .debug_frame   0x000002a4       0xa4 ios.o
+ .debug_frame   0x00000348       0x48 err.o
+ .debug_frame   0x00000390       0xe8 isrsupport.o
+ .debug_frame   0x00000478      0x160 uart.o
+ .debug_frame   0x000005d8       0x64 comms.o
+ .debug_frame   0x0000063c       0xb4 iap.o
+ .debug_frame   0x000006f0       0x8c serial_fifo.o
+ .debug_frame   0x0000077c       0xf0 sermsg.o
+ .debug_frame   0x0000086c       0x38 sersendf.o
+ .debug_frame   0x000008a4       0x44 crc.o

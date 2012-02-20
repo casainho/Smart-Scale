@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
 /*
  * Copyright (C) 2011 Senseless Solutions 
  *
@@ -24,10 +22,15 @@
  * Original Source code: http://fredrik.jemla.eu/weightchart
  */
 
--->
+package net.casainho.smartweightchart;
 
-<net.casainho.smartweightchart.LegendView
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:background="#fff"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent"/>
+import android.app.Activity;
+import android.os.Bundle;
+
+public class LegendActivity extends Activity {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.legend);
+	}
+}

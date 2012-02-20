@@ -140,7 +140,7 @@
     <string name="max_weight_alert">U bent over het gewicht!</string>
     <string name="goal_weight_label">Doelgewicht</string>
     
-    <string name="market_url">market://details?id=es.senselesssolutions.gpl.weightchart</string>
+    <string name="market_url">market://details?id=net.casainho.smartweightchart</string>
     <string name="market">Gewichtsgrafiekin de Android Market</string>
     <string name="market_url_author">market://search?q=pub:aitorTheRed@senselesssolutions</string>
     <string name="market_author">Meer van deze ontwikkelaar</string>

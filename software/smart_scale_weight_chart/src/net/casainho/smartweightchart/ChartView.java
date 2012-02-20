@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
 /*
  * Copyright (C) 2011 Senseless Solutions 
  *
@@ -24,10 +22,35 @@
  * Original Source code: http://fredrik.jemla.eu/weightchart
  */
 
--->
+package net.casainho.smartweightchart;
 
-<net.casainho.smartweightchart.LegendView
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:background="#fff"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent"/>
+import android.content.Context;
+import android.graphics.Canvas;
+import android.util.AttributeSet;
+import android.view.View;
+
+public class ChartView extends View {
+	private ChartDraw mDraw;
+
+	public ChartView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+	}
+
+	public void setChartDraw(ChartDraw chartDraw) {
+		mDraw = chartDraw;
+	}
+
+	@Override
+	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		if (mDraw != null) {
+			mDraw.setSize(w, h);
+		}
+	}
+
+	@Override
+	public void onDraw(Canvas canvas) {
+		if (mDraw != null) {
+			mDraw.draw(canvas);
+		}
+	}
+}
