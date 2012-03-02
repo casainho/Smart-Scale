@@ -75,6 +75,9 @@ public class ChartDraw {
 	private boolean mShowWeightLine = true;
 	private boolean mShowAverageLine = true;
 	private boolean mShowBMIValues = true;
+	
+	float mOldX = 0;
+	float mOldY = 0;
 
 	public ChartDraw(Context context, Database database, GregorianCalendar date) {
 		date.set(GregorianCalendar.HOUR_OF_DAY, 24);
@@ -152,13 +155,21 @@ public class ChartDraw {
 		int days = mDays;
 		int sizeX = mSizeX;
 		int sizeY = mSizeY;
+		
+		// Calc the date offset (X axis) when we move left/right the graph
 		int dateOffset = Math.round(days * mScrollX / sizeX) - 1;
+		
 		canvas.save();
+		
+		// Translate canvas due to a possible new value of mScrollX (moving graph to left/right)
 		canvas.translate(mScrollX - sizeX * dateOffset / days, 0);
+		
+		// Setup startDate and endDate
 		GregorianCalendar endDate = (GregorianCalendar) mDate.clone();
-		endDate.add(GregorianCalendar.DATE, -dateOffset);
+		endDate.add(GregorianCalendar.DATE, -dateOffset); // setting the day of month for endDate
 		GregorianCalendar startDate = (GregorianCalendar) endDate.clone();
-		startDate.add(GregorianCalendar.DATE, -9 - days);
+		startDate.add(GregorianCalendar.DATE, -days); // setting the day of month startDate
+		
 		Paint gridPaint = mGridPaint;
 		Paint leftTextBackgroundPaint = mLeftTextBackgroundPaint;
 		Paint leftTextPaint = mLeftTextPaint;
@@ -167,7 +178,7 @@ public class ChartDraw {
 		float chartPosY = sizeY - 2.6f * textSize - 3;
 		float chartSizeY = sizeY - 4.7f * textSize - 3;
 
-		/* Added by aitorthered@senselesssolutions */
+		// Define Max Weight and Goal Weight Paint objects
 		Paint maxWeightPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 		maxWeightPaint.setColor(0xffff0000);
 		maxWeightPaint.setStrokeWidth(1f);
@@ -176,17 +187,14 @@ public class ChartDraw {
 		goalWeightPaint.setColor(0xff00ff00);
 		goalWeightPaint.setStrokeWidth(1f);
 		goalWeightPaint.setStyle(Paint.Style.STROKE);
-		/* Added by aitorthered@senselesssolutions */
 
 		// Draw vertical lines separating weeks
-
 		for (int i = 5 - (startDate.get(GregorianCalendar.DAY_OF_WEEK) + 5) % 7; i < days; i += 7) {
 			float x = sizeX * i / (float) days;
 			canvas.drawLine(x, 0, x, sizeY, gridPaint);
 		}
 
-		// Fetch data
-
+		// Fetch data from the database
 		Cursor cursor = mDatabase
 				.query("SELECT weight, created_at FROM weight WHERE created_at >= "
 						+ startDate.getTimeInMillis()
@@ -196,9 +204,8 @@ public class ChartDraw {
 						/ 1000 + " ORDER BY created_at");
 		int count = cursor.getCount();
 
-		if (count > 0) {
+		if (count > 0) { // If there are any value...
 			// Prepare data
-
 			int ordinal = -9;
 			int maxValue = 0;
 			int minValue = Integer.MAX_VALUE;
@@ -222,6 +229,7 @@ public class ChartDraw {
 					entries.add(entry);
 					ordinal++;
 
+					// Keep verifying and recording the max and min weight value
 					if (ordinal > -2) {
 						maxValue = Math.max(maxValue, entry.weight);
 						minValue = Math.min(minValue, entry.weight);
@@ -246,7 +254,6 @@ public class ChartDraw {
 			}
 
 			// Draw horizontal lines
-
 			while (delta >= 30 * stride) {
 				stride *= 10;
 			}
@@ -262,39 +269,64 @@ public class ChartDraw {
 			}
 
 			// Draw filled area
-
 			int i = 0;
 			int subsetCount = 0;
 			int subsetIndex = 0;
 			float subsetSum = 0;
+			int lastWeight = 0;
 			Path averagePath = new Path();
 			Path path = new Path();
 
-			int lastWeight = 0;
 			for (ChartEntryData entry : entries) {
+				
 				ChartEntryData startEntry = entries.get(subsetIndex);
+				
+				//Log.i("ordinal", "entry.ordinal: " + entry.ordinal + " - startEntry.ordinal: " + startEntry.ordinal);
+				//Log.i("ordinal", "entry.weight: " + entry.weight);
+				
+				// Average??
 				if (startEntry.ordinal <= entry.ordinal - 7) {
 					subsetCount--;
 					subsetIndex++;
 					subsetSum -= startEntry.y;
 				}
-				entry.x = sizeX * (entry.ordinal + .5f) / days;
-				entry.y = chartPosY - chartSizeY * (entry.weight - minValue)
-						/ delta;
-				/* Added by aitorthered@senselesssolutions */
+				
+				entry.x = (entry.ordinal + .5f) * (sizeX / days);
+				// (sizeX / days) --> x pixels per day 
+				
+				entry.y = chartPosY - ((entry.weight - minValue) * (chartSizeY / delta));
+				// (chartSizeY / delta) --> example: 640 pixels / 10kg; pixels for each kg
+				// (entry.weight - minValue) --> remove from the weight value the "constant"/min value
+				
 				lastWeight = entry.weight;
-				/* ^Added by aitorthered@senselesssolutions */
 				subsetCount++;
 				subsetSum += entry.y;
-				if (i > 0) {
-					averagePath.lineTo(entry.x, subsetSum / subsetCount);
+				
+				if (i > 0) {// all other values other than first value
+					
+					averagePath.quadTo(mOldX, mOldY, (mOldX + entry.x) / 2, (mOldY + (subsetSum / subsetCount)) / 2);
+					
+					mOldX = entry.x;
+					mOldY = subsetSum / subsetCount;
+					
 					path.lineTo(entry.x, entry.y);
-				} else {
+				} else {// first value
 					averagePath.moveTo(entry.x, entry.y);
+					
+					mOldX = entry.x;
+					mOldY = entry.y;
+
 					path.moveTo(entry.x, entry.y);
 				}
+				
+				// The last line of averagePath must be draw like this 
+				if (i == (entries.size() - 1)) {
+					averagePath.lineTo(entry.x, (mOldY + (subsetSum / subsetCount)) / 2);
+				}	
+					
 				i++;
 			}
+						
 
 			/* Added by aitorthered@senselesssolutions for max and goal weight */
 			if (mMaxWeight <= maxValue && mMaxWeight >= minValue) {
@@ -390,14 +422,13 @@ public class ChartDraw {
 		cursor.close();
 
 		// Draw text for days at bottom
-
 		float monthPosY = sizeY - 2.7f * textSize;
 		float weekdayPosY = sizeY - 1.6f * textSize;
 		float datePosY = sizeY - textSize / 2;
 		String[] weekdays = mWeekdays;
 		boolean compact = sizeX / textSize / days < 2;
 		int i = -2;
-		startDate.add(GregorianCalendar.DATE, 7);
+		startDate.add(GregorianCalendar.DATE, -9 - days);
 
 		while (i < days) {
 			float x = (2.f * sizeX * i + sizeX) / days / 2;
