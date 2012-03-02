@@ -389,32 +389,30 @@ public class ChartDraw {
 					canvas.drawOval(oval, plotPaint);
 				}
 
-				if (entry.weight != weight) {
-					weight = entry.weight;
+				weight = entry.weight;
 
-					if (mShowBMIValues == true) {
-						if (bmiFactor > 0) {
-							canvas.save();
-							canvas.rotate(-90);
-							String s = numberFormat.format(bmiFactor * weight);
-							float x = (entry.y < 5 * textSize ? -3.2f : 1.8f)
-									* textSize - entry.y;
-							float y = entry.x - halfAscent;
-							canvas.drawText(s, x, y, bmiBackgroundPaint);
-							canvas.drawText(s, x, y, bmiPaint);
-							canvas.restore();
-						}
+				if (mShowBMIValues == true) {
+					if (bmiFactor > 0) {
+						canvas.save();
+						canvas.rotate(-90);
+						String s = numberFormat.format(bmiFactor * weight);
+						float x = (entry.y < 5 * textSize ? -3.2f : 1.8f)
+								* textSize - entry.y;
+						float y = entry.x - halfAscent;
+						canvas.drawText(s, x, y, bmiBackgroundPaint);
+						canvas.drawText(s, x, y, bmiPaint);
+						canvas.restore();
 					}
+				}
 
-					String s = stone ? "" + weight / 140 + "'" + weight % 140
-							/ 10. : "" + weight / 10.;
-					float x = entry.x;
-					float y = entry.y - textSize / 2;
+				String s = stone ? "" + weight / 140 + "'" + weight % 140
+						/ 10. : "" + weight / 10.;
+				float x = entry.x;
+				float y = entry.y - textSize / 2;
 
-					if (mShowWeightLine == true) {
-						canvas.drawText(s, x, y, textBackgroundPaint);
-						canvas.drawText(s, x, y, textPaint);
-					}
+				if (mShowWeightLine == true) {
+					canvas.drawText(s, x, y, textBackgroundPaint);
+					canvas.drawText(s, x, y, textPaint);
 				}
 			}
 		}
